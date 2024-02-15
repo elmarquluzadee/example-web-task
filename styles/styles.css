@@ -1,9 +1,6 @@
 html {
   font-size: 10px;
 }
-body{
-  background: #000000;
-}
 * {
   margin: 0%;
   padding: 0%;
@@ -114,4 +111,114 @@ body{
 .auth-buttons li a:hover {
   background: #000000;
   color: #ffffff;
+}
+#main{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.main-container {
+  max-width: 1440px;
+  width: 100%;
+  overflow: hidden;
+}
+.banner-items{
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.banner-content {
+  position: absolute;
+  top: 40%; 
+  left: 40%;
+  display: grid;
+  gap: 2rem;
+  transform: translate(-50%, -50%); 
+  text-align: start; 
+}
+.banner-content h3{
+  color: #ffffff;
+  font-size:4.8rem;
+  line-height: 5.4rem;
+  font-weight: 700;
+}
+.banner-content span{
+  color: #ffffff;
+  font-size:1.6rem;
+  font-weight: 500;
+}
+.banner-image{
+  max-width: 100%;
+  width: 1440px;
+  background-size: cover;
+  background-position: center;
+  height:60rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.category-section{
+ margin-top:12rem;
+ width: 100%;
+text-align: center;
+}
+
+.exams-content,
+.category-content{
+  gap: 1rem;
+  display: grid;
+}
+.exams-content span,
+.category-content span{
+font-size: 1.6rem;
+}
+.category-items{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.exams-content h2,
+.category-content h2{
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 5.4rem;
+}
+.category-section{
+  height: 40rem;
+}
+.category-product {
+  width: 75rem;
+  display: grid;
+  grid-template-columns: repeat(4, 0fr); 
+  grid-auto-rows: 10rem;
+  gap: 2rem; 
+  margin-top: 4rem;
+}
+
+.category-product > div {
+  width: 160px;
+  height: 100px;
+  background-color: #FAFAFA; 
+  box-shadow: 4px 4px 8px 0px #0000000D;
+  transition: 0.2s;
+  border-radius: 12px;
+}
+.category-product > div:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.category-product > div > a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exams-section{
+  text-align: center;
+  margin-top: 6rem;
 }
