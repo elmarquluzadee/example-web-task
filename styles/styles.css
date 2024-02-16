@@ -22,6 +22,30 @@ html {
   font-family: "Public Sans", sans-serif;
 }
 
+.d-flex {
+  display: flex !important;
+}
+.align-items-center {
+  align-items: center !important;
+}
+.gap-sm-0 {
+  gap: 0 !important;
+}
+.gap-sm-1 {
+  gap: 0.25rem !important;
+}
+.gap-sm-2 {
+  gap: 0.5rem !important;
+}
+.gap-sm-3 {
+  gap: 1rem !important;
+}
+.gap-sm-4 {
+  gap: 1.5rem !important;
+}
+.gap-sm-5 {
+  gap: 3rem !important;
+}
 /* @media (max-width: 1300px) {
   html {
     font-size: 8px;
@@ -112,7 +136,7 @@ html {
   background: #000000;
   color: #ffffff;
 }
-#main{
+#main {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -122,7 +146,7 @@ html {
   width: 100%;
   overflow: hidden;
 }
-.banner-items{
+.banner-items {
   width: 100%;
   position: relative;
   display: flex;
@@ -130,77 +154,77 @@ html {
 }
 .banner-content {
   position: absolute;
-  top: 40%; 
+  top: 40%;
   left: 40%;
   display: grid;
   gap: 2rem;
-  transform: translate(-50%, -50%); 
-  text-align: start; 
+  transform: translate(-50%, -50%);
+  text-align: start;
 }
-.banner-content h3{
+.banner-content h3 {
   color: #ffffff;
-  font-size:4.8rem;
+  font-size: 4.8rem;
   line-height: 5.4rem;
   font-weight: 700;
 }
-.banner-content span{
+.banner-content span {
   color: #ffffff;
-  font-size:1.6rem;
+  font-size: 1.6rem;
   font-weight: 500;
 }
-.banner-image{
+.banner-image {
   max-width: 100%;
   width: 1440px;
   background-size: cover;
   background-position: center;
-  height:60rem;
+  height: 60rem;
   width: 100%;
   overflow: hidden;
 }
 
-.category-section{
- margin-top:12rem;
- width: 100%;
-text-align: center;
+.category-section {
+  margin-top: 12rem;
+  width: 100%;
+  text-align: center;
 }
 
 .exams-content,
-.category-content{
+.category-content {
   gap: 1rem;
   display: grid;
 }
 .exams-content span,
-.category-content span{
-font-size: 1.6rem;
+.category-content span {
+  font-size: 1.6rem;
 }
-.category-items{
+.category-items {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 .exams-content h2,
-.category-content h2{
+.category-content h2 {
   font-size: 2.4rem;
   font-weight: 700;
   line-height: 5.4rem;
 }
-.category-section{
+.category-section {
   height: 40rem;
 }
 .category-product {
   width: 75rem;
   display: grid;
-  grid-template-columns: repeat(4, 0fr); 
+  grid-template-columns: repeat(4, 0fr);
   grid-auto-rows: 10rem;
-  gap: 2rem; 
+  gap: 2rem;
   margin-top: 4rem;
 }
 
 .category-product > div {
   width: 160px;
   height: 100px;
-  background-color: #FAFAFA; 
-  box-shadow: 4px 4px 8px 0px #0000000D;
+  background-color: #fafafa;
+  box-shadow: 4px 4px 8px 0px #0000000d;
   transition: 0.2s;
   border-radius: 12px;
 }
@@ -218,7 +242,87 @@ font-size: 1.6rem;
   align-items: center;
 }
 
-.exams-section{
+.exams-section {
   text-align: center;
   margin-top: 6rem;
+}
+.exams-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  justify-content: center;
+}
+.exams-filter {
+  background: #fafafa;
+  text-align: start;
+  padding: 3rem;
+  border-radius: 1.2rem;
+}
+.exams-list h3 {
+  /* margin-bottom: 2rem; */
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0em;
+}
+
+.exams-list span {
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+}
+
+.exams-filter ul {
+}
+.exams-filter li {
+  display: grid;
+  align-items: center;
+  border-radius: 1.2rem;
+  height: 4.4rem;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: start;
+  padding-left: 1.5rem;
+  cursor: pointer;
+}
+.exams-filter li:hover {
+  background: #000000;
+  color: #ffffff;
+}
+.exams-filter > div {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.exams-filter .labels-item {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.exams-cards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.exams-card{
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.exams-card h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.8rem;
+  letter-spacing: 0em;
+}
+.exams-card-rating {
+  display: flex;
+}
+.exams-card-rating>div:last-child{
+  display: flex;
 }
