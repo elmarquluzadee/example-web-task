@@ -21,7 +21,10 @@ html {
 .content-text-font {
   font-family: "Public Sans", sans-serif;
 }
-
+.active-btn {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
 .d-flex {
   display: flex !important;
 }
@@ -46,11 +49,6 @@ html {
 .gap-sm-5 {
   gap: 3rem !important;
 }
-/* @media (max-width: 1300px) {
-  html {
-    font-size: 8px;
-  }
-} */
 
 .common-social-icons li:hover img {
   filter: brightness(0) invert(1);
@@ -58,6 +56,7 @@ html {
 
 /*  */
 #header {
+  min-width: 1015px;
   background-color: #ffffff;
   width: 100%;
   height: 80px;
@@ -67,16 +66,18 @@ html {
 }
 .header-container {
   max-width: 1440px;
+
   height: 80px;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* word-wrap: break-word;
-  word-break: break-word; */
+}
+.mob-container {
+  display: none;
 }
 .logo-item {
-  width: 25%;
+  width: 20%;
   text-align: center;
 }
 .logo-title h1 {
@@ -88,7 +89,7 @@ html {
 }
 
 .nav-container {
-  width: 75%;
+  width: 80%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -137,13 +138,17 @@ html {
   color: #ffffff;
 }
 #main {
+  min-width: 1015px;
   width: 100%;
   display: flex;
   justify-content: center;
 }
 .main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 1440px;
-  width: 100%;
+  /* width: 100%; */
   overflow: hidden;
 }
 .banner-items {
@@ -151,6 +156,7 @@ html {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .banner-content {
   position: absolute;
@@ -175,13 +181,14 @@ html {
 .banner-image {
   max-width: 100%;
   width: 1440px;
+}
+.banner-image img {
   background-size: cover;
   background-position: center;
   height: 60rem;
   width: 100%;
   overflow: hidden;
 }
-
 .category-section {
   margin-top: 12rem;
   width: 100%;
@@ -208,14 +215,13 @@ html {
   font-weight: 700;
   line-height: 5.4rem;
 }
-.category-section {
-  height: 40rem;
-}
+
 .category-product {
   width: 75rem;
   display: grid;
   grid-template-columns: repeat(4, 0fr);
   grid-auto-rows: 10rem;
+  justify-content: center;
   gap: 2rem;
   margin-top: 4rem;
 }
@@ -245,9 +251,13 @@ html {
 .exams-section {
   text-align: center;
   margin-top: 6rem;
+  display: grid;
+  justify-content: center;
 }
 .exams-list {
   width: 100%;
+  gap: 2rem;
+  margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 3fr;
   justify-content: center;
@@ -255,11 +265,11 @@ html {
 .exams-filter {
   background: #fafafa;
   text-align: start;
-  padding: 3rem;
+  padding: 2rem;
   border-radius: 1.2rem;
+  height: fit-content;
 }
 .exams-list h3 {
-  /* margin-bottom: 2rem; */
   font-size: 2rem;
   font-weight: 600;
   line-height: 24px;
@@ -274,8 +284,6 @@ html {
   letter-spacing: 0em;
 }
 
-.exams-filter ul {
-}
 .exams-filter li {
   display: grid;
   align-items: center;
@@ -298,31 +306,720 @@ html {
   display: grid;
   gap: 2rem;
   margin-bottom: 1rem;
-  margin-top: 1rem;
 }
 .exams-filter .labels-item {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-.exams-cards{
+.exams-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 0fr);
   gap: 2rem;
 }
-.exams-card{
+.exams-card {
   display: block;
-  height: 100%;
-  width: 100%;
+  height: 394px;
+  width: 373px;
+  padding: 2rem;
+  background: #fafafa;
+  border-radius: 12px;
 }
+
 .exams-card h4 {
   font-size: 2rem;
   font-weight: 700;
   line-height: 2.8rem;
   letter-spacing: 0em;
+  text-align: start;
 }
 .exams-card-rating {
+  margin-top: 4rem;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.exams-card-rating>div:last-child{
+.exams-card-rating > div {
   display: flex;
+  align-items: center;
+}
+.exams-card-rating div:nth-child(2) div:last-child {
+  display: flex;
+  align-items: center;
+}
+.exams-card-rating div:nth-child(2) div:last-child svg {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.exams-card-rating div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+.exams-card-rating div:nth-child(2) div {
+  display: flex;
+  align-items: center;
+}
+.exams-card button {
+  margin-top: 3rem;
+  width: 317px;
+  height: 44px;
+  top: 322px;
+  left: 28px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 12px;
+  border: 1px;
+  gap: 10px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #000000;
+}
+.exams-card button:hover{
+  background: #000000;
+  color: #ffffff;
+}
+.exams-card div:nth-child(3) {
+  margin-top: 2rem;
+}
+.exams-card div:nth-child(3) h5 {
+  text-align: start;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  letter-spacing: 0em;
+  margin-bottom: 1.2rem;
+}
+.exams-card div:nth-child(3) span {
+  display: flex;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.8rem;
+  letter-spacing: 0em;
+}
+
+.exams-card div:nth-child(5) {
+  display: flex;
+  align-items: center;
+  text-align: start;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+.exams-card hr:nth-child(4) {
+  margin-top: 2rem;
+  width: 100%;
+  height: 1px;
+  background-color: #d9d9d9;
+  border: none;
+}
+
+.exams-card div:nth-child(5) span {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.2rem;
+  background: #d9d9d9;
+  width: fit-content;
+  padding: 4px 16px 4px 16px;
+  border-radius: 1.2rem;
+  cursor: pointer;
+}
+.show-more {
+  text-align: center;
+}
+.show-more button {
+  background: transparent;
+  padding: 10px 20px 10px 20px;
+  margin-top: 4rem;
+  cursor: pointer;
+  border-radius: 1.2rem;
+  border: 1px solid #d9d9d9;
+  transition: 0.3s;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.4;
+}
+.show-more button:hover {
+  background: #000000;
+  color: #ffffff;
+}
+#footer {
+  min-width: 1015px;
+  display: flex;
+  justify-content: center;
+  height: 369px;
+  width: 100%;
+  margin-top: 10rem;
+}
+.footer-container {
+  max-width: 1440px;
+  width: 100%;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-nav h2 {
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 4.8rem;
+}
+.footer-nav > div {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.footer-nav ul {
+  display: flex;
+  gap: 2rem;
+}
+.footer-nav ul li a {
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  font-weight: 500;
+  color: #000000;
+}
+.footer-contacts > div {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-top: 2rem;
+}
+.footer-contacts > div a {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.footer-container hr {
+  border: 1px solid #d9d9d9;
+  width: 100%;
+}
+.footer-social-items ul {
+  width: 100%;
+  gap: 2.3rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.footer-social-items {
+  margin-bottom: 2rem;
+}
+.footer-institution-ordinary {
+  margin-top: 2rem;
+  width: 100%;
+  justify-content: left;
+}
+.footer-institution-ordinary span {
+  color: #000000;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2rem;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.footer-nav .lang-drop-items {
+  background: #d9d9d9;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  padding: 8px 12px 8px 12px;
+  border-radius: 8px;
+}
+
+/* Exam Pages */
+
+.banner-content-exam {
+  position: absolute;
+  top: 60px;
+  left: 50px;
+  display: grid;
+  gap: 3rem;
+  text-align: start;
+}
+
+.banner-content-exam h3 {
+  color: #ffffff;
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 5.4rem;
+  letter-spacing: 0em;
+  text-align: start;
+}
+.banner-content-exam ul {
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.banner-content-exam ul li {
+  color: #ffffff;
+  list-style: disc;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.banner-image-exam {
+  max-width: 1440px;
+  width: 1160px;
+}
+.banner-image-exam img {
+  background-size: cover;
+  background-position: center;
+  height: 40rem;
+  width: 100%;
+  overflow: hidden;
+}
+.banner-content-exam a {
+  width: fit-content;
+  height: fit-content;
+}
+.banner-content-exam button {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 10px 20px 10px 20px;
+  border-radius: 1.6rem;
+  cursor: pointer;
+}
+.banner-right-sticker img {
+  position: absolute;
+  top: 0px;
+  right: 50px;
+}
+.results-section {
+  width: 1160px;
+  gap: 2rem;
+  margin-top: 10rem;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  justify-content: center;
+}
+.results-section > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  height: 388px;
+  padding: 2rem;
+  background: #fafafa;
+  box-shadow: 4px 4px 8px 4px #0000000d;
+  border-radius: 12px;
+}
+.results-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 3.2rem;
+  letter-spacing: 0em;
+}
+.information-item {
+  display: flex;
+  gap: 6rem;
+}
+.information-item > div {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.information-item span {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.questions-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.questions-item ul {
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.questions-item ul li {
+  list-style: disc;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.2rem;
+  letter-spacing: 0;
+  text-align: left;
+}
+.user-results {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user-results > div {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1.2rem;
+}
+.user-results h5 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  letter-spacing: 0;
+  color: #000000;
+}
+.user-results p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.2rem;
+  letter-spacing: 0;
+  color: #000000;
+}
+
+.user-results span {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 2rem;
+  letter-spacing: 0;
+  color: #000000;
+}
+
+.user-list-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.reviews-section {
+  margin-top: 8rem;
+}
+
+.reviews-section h2 {
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 5.4rem;
+  letter-spacing: 0;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.reviews-rating {
+  width: 1160px;
+  height: 254px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  background: #fafafa;
+  border-radius: 12px;
+  box-shadow: 4px 4px 8px 4px #0000000d;
+}
+.reviews-rating h4 {
+  font-size: 6.4rem;
+  font-weight: 500;
+  line-height: 7.8rem;
+  letter-spacing: 0;
+  margin-top: 3rem;
+}
+.reviews-rating span {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  letter-spacing: 0;
+  color: #000000;
+}
+.reviews-rating > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reviews-rating > div:nth-child(1) > div {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.reviews-rating > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+}
+.reviews-rating > div:nth-child(2) > div {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+}
+
+.reviews-rating > div:nth-child(2) hr {
+  border: none;
+  width: 40rem;
+  height: 8px;
+  background: #d9d9d9;
+  border-radius: 100px;
+}
+.reviews-rating > div:nth-child(2) div:nth-child(2) hr {
+  width: 9.8rem;
+}
+.reviews-rating > div:nth-child(2) div:nth-child(3) hr {
+  width: 7.5rem;
+}
+.reviews-rating > div:nth-child(2) div:nth-child(4) hr {
+  width: 5rem;
+}
+.reviews-rating > div:nth-child(2) div:nth-child(5) hr {
+  width: 1.2rem;
+}
+.user-opinions-items {
+  width: 1160px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-content: center;
+}
+.opinion-section {
+  width: 1160px;
+  height: fit-content;
+  margin-top: 8rem;
+}
+.user-opinions-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 1.6rem;
+  background: #fafafa;
+  border-radius: 12px;
+}
+.user-opinions-card p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.2rem;
+  letter-spacing: 0em;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.user-opinions-card span {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.2rem;
+  letter-spacing: 0;
+}
+.user-opinions-card h4 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+  letter-spacing: 0;
+}
+.user-opinions-card > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  #header {
+    height: 60px;
+    min-width: 100%;
+  }
+  #main {
+    min-width: 100%;
+  }
+  #footer {
+    min-width: 100%;
+  }
+  .header-container {
+    display: none;
+  }
+  .category-section {
+    margin-top: 4rem;
+  }
+  .mob-container {
+    display: flex;
+  }
+  .category-product {
+    grid-template-columns: repeat(2, 0fr);
+  }
+  .exams-list {
+    width: 100%;
+    grid-template-columns: repeat(1, 0fr);
+  }
+  .exams-cards {
+    grid-template-columns: repeat(1, 0fr);
+  }
+  .footer-nav {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .footer-nav > div {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .banner-image img {
+    height: auto;
+  }
+  .banner-content {
+    gap: 0;
+  }
+  .banner-content h3 {
+    font-size: 1.8rem;
+  }
+  .banner-content span {
+    font-size: 1rem;
+  }
+  .footer-nav ul {
+    flex-direction: column;
+  }
+  .results-section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .user-opinions-items {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .user-opinions-items {
+    grid-template-columns: repeat(1, 300px);
+  }
+  .information-item{
+    display: block;
+  }
+  .reviews-rating{
+    display: none;
+  }
+  .banner-right-sticker img {
+    display: none;
+  }
+  .banner-content-exam h3 {
+  font-size: 2rem;
+  }
+  .banner-content-exam ul li {
+    font-size: 1rem;
+  }
+  .results-section,
+  .reviews-rating ,
+  .user-opinions-items ,
+  .opinion-section{
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+/* res */
+
+.mob-container {
+  width: 100%;
+  padding: 0 20px;
+  background: #ffffff;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.mob-container #brand {
+  font-weight: bold;
+  font-size: 18px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.mob-container #brand a {
+  color: #000000;
+}
+
+.mob-container ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.mob-container ul li {
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.mob-container ul li:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+.mob-container #hamburger-icon {
+  margin: auto 0;
+  display: none;
+  cursor: pointer;
+}
+
+.mob-container #hamburger-icon div {
+  width: 35px;
+  height: 3px;
+  background-color: black;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.mob-container .open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.mob-container .open .bar2 {
+  opacity: 0;
+}
+
+.mob-container .open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.mob-container .open .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.mob-container .mobile-menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  min-height: 40vh;
+  height: fit-content;
+  width: 100%;
+}
+
+.mob-container .mobile-menu li {
+  margin-bottom: 10px;
+}
+
+.mob-container #hamburger-icon {
+  display: block;
+}
+.mobile-menu a {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #000000;
+}
+.mobile-menu #signup,
+.mobile-menu #login {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 500;
+  padding: 10px 20px 10px 20px;
+  color: var(--text-color);
+  border-radius: 1.2rem;
+  border: 1px solid #000000;
 }
